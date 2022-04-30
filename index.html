@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/v1.css">
+  </head>
+  <body>
+    <div>
+       <b
+      ><ul>
+       <a href="teamhistory.html"
+          ><li>Team History<a href="3"></a></li></a
+        ><a href="keypeople.html"
+          ><li>Key People<a href="3"></a></li></a
+        ><a href="championships.html"
+          ><li>Championships<a href="3"></a></li></a
+        ><a href="sitemap.html"
+          ><li>Sitemap <a href="3"></a></li></a
+          ><a href="contact.html"
+     ><li>Contact</a></li></a
+></b>    
+      </div>
+      <div>
+        <h1>The New York Yankees</h1>
+    <p>
+      <img class="logo" title="Yankees Logo" src="images/New-York-Yankees1-scaled (2).jpg" alt="">
+    </p>
+    <p>
+      <a class="schedule" href="https://www.mlb.com/yankees/schedule/2022-03">2022 Schedule</a>
+    </p>
+      </div>
+      <table>
+        <tr>
+          <td>
+              <h1 id="About">
+                About
+              </h1>
+              <p>
+               
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <img src="images/yankeestadiumhome.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/skyline.webp" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/packedstadium.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/corefour.jpg" style="width: 100%;" alt="">
+  </div>
+
+  <a id="prev" class="prev" onclick="plusSlides(-1)">&#8592;</a>
+  <a id="next" class="next" onclick="plusSlides(1)">&#8594;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+              </p>
+              <p id="aboutpara">
+                The New York Yankees are an American 
+                Major League Baseball team. Their hometown 
+                is the Bronx, NY. The Yankees are the team 
+                with the most championships won in the 
+                history of MLB with 27 World Series 
+                victories and 40 American League pennants.
+              </p>
+          </td>
+          <td class="twitter">
+            <a id="Twitter" class="twitter-timeline" data-width="1200" href="https://twitter.com/Yankees?ref_src=twsrc%5Etfw">Tweets by Yankees</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </td>
+        </tr>
+      </table>  
+      <script>
+        let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+      </script>
+    
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  const containerElm = document.querySelector("#next");
+  
+  const getRandomIntInclusive = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
+  
+  const getRandomRGB = () => {
+    const r = getRandomIntInclusive(0, 255);
+    const g = getRandomIntInclusive(0, 255);
+    const b = getRandomIntInclusive(0, 255);
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+  
+  const handleOnClick = () => {
+    containerElm.style.backgroundColor = getRandomRGB();
+  }
+  
+  containerElm.addEventListener("click", handleOnClick);
+});
+      </script>
+  </body>
+</html>

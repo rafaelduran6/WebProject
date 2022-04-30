@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+
+<body>
+    <div>
+        <b
+       ><ul>
+        <a href="teamhistory.html"
+           ><li>Team History<a href="3"></a></li></a
+         ><a href="keypeople.html"
+           ><li>Key People<a href="3"></a></li></a
+         ><a href="championships.html"
+           ><li>Championships<a href="3"></a></li></a
+         ><a href="sitemap.html"
+           ><li>Sitemap <a href="3"></a></li></a
+           ><a href="contact.html"
+      ><li>Contact</a></li></a
+ ><a href="index.html"
+ ><li>Home <a href="3"></a></li></a
+></b>    
+       </div>
+       <h1>Contact Us</h1>
+       <form action="">
+        <div>
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Name" name="fname" id="name" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="text" name="fname" id="email" placeholder="Email" />
+      </div>
+       <div>
+          <textarea name="comments" id="comments" cols="100" rows="10">
+Comments</textarea
+          >
+        </div>
+        <div>
+         <input type="checkbox" name="updates" id="updates">
+         Sign me up for email updates
+        </div><div>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>   
+       </form>
+       <script>
+           document.getElementById('contact-form').onsubmit = function(e) {
+            
+            const name = document.getElementsByName('name')[0].value;
+            const email = document.getElementsByName('Email')[0].value;
+            const comments = document.getElementsByName('comments')[0].value;
+            
+            const updates = document.getElementsByName('updates')[0].value;
+            const info = document.getElementsByName('info')[0].value;
+
+            const signup_checkbox = document.getElementsByName('signup-checkbox')[0].value;
+
+            if(name == '') {
+                alert('Please enter your name');
+                return false;
+            }
+            else if(email == '') {
+                alert('Please enter your email address');
+                return false;
+            }
+            else if(email != '' && !ValidateEmail(email)) {
+                alert("You have entered an invalid email address!");
+                return false;
+            }
+            else if(comments == '') {
+                alert('Please enter your feedback');
+                return false;
+            }
+            else if(updates == '') {
+                alert('Please select a topic');
+                return false;
+            }
+                  
+            return true;
+            
+        };
+
+       </script>
+       
+</body>
+</html>
